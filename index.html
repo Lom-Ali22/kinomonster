@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Главная страница</title>
+	<meta name="description" content="Киномонстр - это портал о кино" />
+	<meta name="keywords" content="фильмы, фильмы онлайн, hd" />
+	<link rel="stylesheet" href="assets/css/style.css">
+	<script src="assets/js/jquery-3.7.1.js"></script>
+</head>
+
+<body>
+
+	<div class="modal_window">
+
+		<div class="modal_content">
+			<div class="x">
+				<svg viewBox="0 0 500 500">
+					<g>
+						<path class="str0" d="M425 75l-350 350m350 0l-350 -350" />
+					</g>
+				</svg>
+			</div>
+
+			<div class="matrix_img"><img src="Bigmatrix.jpg" alt=""></div>
+		</div>
+	</div>
+
+	<div class="main">
+
+
+		<div class="header">
+			<div class="logo">
+				<div class="logo_text">
+					<h1><a href="index.html">КиноМонстр</a></h1>
+					<h2>Кино - наша страсть!</h2>
+				</div>
+			</div>
+
+			<div class="menubar">
+
+
+				<ul class="menu">
+					<li class="selected"><a href="index.html">Главная</a></li>
+					<li><a href="films.html">Фильмы</a></li>
+					<li><a href="#">Сериалы</a></li>
+					<li><a href="rating.html">Рейтинг фильмов</a></li>
+					<li><a href="contact.html">Контакты</a></li>
+				</ul>
+
+
+
+				<div class="menu_2">
+					<svg class="menu_img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px"
+						height="50px">
+						<path
+							d="M 3 8 A 2.0002 2.0002 0 1 0 3 12 L 47 12 A 2.0002 2.0002 0 1 0 47 8 L 3 8 z M 3 23 A 2.0002 2.0002 0 1 0 3 27 L 47 27 A 2.0002 2.0002 0 1 0 47 23 L 3 23 z M 3 38 A 2.0002 2.0002 0 1 0 3 42 L 47 42 A 2.0002 2.0002 0 1 0 47 38 L 3 38 z" />
+					</svg>
+				</div>
+
+				<div class="load_wrap">
+					<div class="load">
+
+					</div>
+				</div>
+			</div>
+
+
+
+
+		</div>
+
+
+
+
+		<div class="site_content">
+
+
+
+
+
+			<div class="sidebar_container">
+				<img class="loading_animation" src="Мяч в трубе.gif" alt="">
+				<div class="sidebar">
+					<h2>Поиск</h2>
+					<form method="post" action="#" id="search_form">
+						<input type="search" name="search_field" placeholder="ваш запрос" />
+						<input type="submit" class="btn" value="найти" />
+					</form>
+				</div>
+
+				<div class="sidebar">
+					<h2>Вход</h2>
+					<form method="post" action="#" id="login">
+
+						<input type="text" name="login_field" placeholder="логин" />
+						<input type="password" name="password_field" placeholder="пароль" />
+						<input type="button" class="btn" value="вход" />
+						<div class="lables_passreg_text">
+							<span><a href="#">забыли пароль?</a></span> | <span><a href="#">регистрация</a></span>
+						</div>
+
+					</form>
+				</div>
+
+				<div class="sidebar sidebar_news">
+					<h2>Новости</h2>
+					<span>31.02.2018</span>
+					<p>Мы запустили расширенный поиск</p>
+					<a href="#">читать</a>
+				</div>
+
+				<div class="sidebar">
+					<h2>Рейтинг фильмов</h2>
+					<ul>
+						<li><a href="show.html">Интерстеллар</a><span class="rating_sidebar">8.1</span></li>
+						<li><a href="#">Матрица</a><span class="rating_sidebar">8.0</span></li>
+						<li><a href="#">Безумный макс</a><span class="rating_sidebar">7.5</span></li>
+						<li><a href="#">Облачный атлас</a><span class="rating_sidebar">7.4</span></li>
+					</ul>
+				</div>
+
+			</div>
+
+
+
+			<div class="content">
+
+				<h1>Новые фильмы</h1>
+
+				<div class="films_block">
+
+					<a href="#"><img src="assets/img/matrix.png"></a>
+					<a href="#">
+						<img src="assets/img/max.png" big_version="assets/img/maxbig.jpg">
+					</a>
+					<a href="show.html"><img src="assets/img/inter.png"></a>
+					<a href="#"><img src="assets/img/cloud.png"></a>
+
+				</div>
+
+				<h1>Новые сериалы</h1>
+
+				<div class="films_block">
+
+					<a href="#"><img src="assets/img/dead.png"></a>
+					<a href="#"><img src="assets/img/silicon.png"></a>
+					<a href="#"><img src="assets/img/breakingbad.png"></a>
+					<a href="#"><img src="assets/img/xfiles.png"></a>
+
+				</div>
+
+
+				<div class="posts">
+					
+					<div class="post">
+						<hr>
+						<h2> <a href="#">Как снимали Интерстеллар</a> </h2>
+						<div class="posts_content">
+							<p>
+								45 лет исполнилось Кристоферу Нолану — одному из самых успешных режиссеров нашего
+								времени,
+								чьи работы одинаково любимы как взыскательными критиками, так и простыми зрителями.
+								Фильмом
+								изначально занималась студия Paramount. Когда Кристофер Нолан занял место режиссера,
+								студия
+								Warner Bros., которая выпускала его последние фильмы, добилась участия в проекте.
+							</p>
+						</div>
+						<div class="film_wrap">
+							<div class="read">
+								<p><a href="#">читать</a></p>
+							</div>
+							<div class="like_film">
+								<div class="rating"></div>
+								<div class="button_like"><button class="like">Нравится</button></div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="post">
+						
+						<hr>
+						<h2><a href="#">Актер Том Хенкс поделился впечатлением о фестивале</a></h2>
+						<div class="posts_content">
+							<p>
+								16 февраля в Лондоне состоялась 67-я церемония вручения наград Британской киноакадемии.
+								Леонардо ДиКаприо, Брэд Питт, Анджелина Джоли, Кейт Бланшетт, Хелен Миррен, Эми Адамс,
+								Кристиан Бэйл, Альфонсо Куарон и другие гости и победители премии — в нашем репортаже.
+							</p>
+						</div>
+						<div class="film_wrap">
+							<div class="read">
+								<p><a href="#">читать</a></p>
+							</div>
+							<div class="like_film">
+								<div class="rating"></div>
+								<div class="button_like"><button class="like">Нравится</button></div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="post">
+						
+						<hr>
+						<h2><a href="#">А2222222222222222222222222ечатлением о фестивале</a></h2>
+						<div class="posts_content">
+							<p>
+								16 феврал33333333333333333333333333333 гости и победители премии — в нашем репортаже.
+							</p>
+						</div>
+						<div class="film_wrap">
+							<div class="read">
+								<p><a href="#">читать</a></p>
+							</div>
+							<div class="like_film">
+								<div class="rating"></div>
+								<div class="button_like"><button class="like">Нравится</button></div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="post">
+						
+						<hr>
+						<h2><a href="#">Актер 123123123123фыфвывпечатлением о фестивале</a></h2>
+						<div class="posts_content">
+							<p>
+								16 февраля в Лондоне состоялась 67-я церемония вручения наград Британской киноакадемии.
+								Леонардо Дижоли, Кейт Бланшетт, Хелен Миррен, Эми Адамс,
+								Кристиан Бэйл, Альфонсо Куарон и другие гости и победители премии — в нашем репортаже.
+							</p>
+						</div>
+						<div class="film_wrap">
+							<div class="read">
+								<p><a href="#">читать</a></p>
+							</div>
+							<div class="like_film">
+								<div class="rating"></div>
+								<div class="button_like"><button class="like">Нравится</button></div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="post">
+						
+						<hr>
+						<h2><a href="#">Актер 122223123123123фыфвывпdsfsdfsdfdsечатлением о фестивале</a></h2>
+						<div class="posts_content">
+							<p>
+								16 февраля в Лондоне состоялась 67-sdfsdfsdfя церемония вручения наград Британской киноакадемии.
+								Леонардо Дижоли, Кейт Бланшетт, Хелен Миррен, Эми Адамс,
+								Кристиан Бэйл, Альфонсо Куарон и другие гости и победители премии — в нашем репортаже.
+							</p>
+						</div>
+						<div class="film_wrap">
+							<div class="read">
+								<p><a href="#">читать</a></p>
+							</div>
+							<div class="like_film">
+								<div class="rating"></div>
+								<div class="button_like"><button class="like">Нравится</button></div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="post">
+						
+						<hr>
+						<h2><a href="#">Актер 122223123123123фыфвывпdsfsdfsdfdsечатлением о фестивале</a></h2>
+						<div class="posts_content">
+							<p>
+								16 февраля в Лондоне состоялась 67-sdfsdfsdfя церемония вручения наград Британской киноакадемии.
+								Леонардо Дижоли, Кейт Бланшетт, Хелен Миррен, Эми Адамс,
+								Кристиан Бэйл, Альфонсо Куарон и другие гости и победители премии — в нашем репортаже.
+							</p>
+						</div>
+						<div class="film_wrap">
+							<div class="read">
+								<p><a href="#">читать</a></p>
+							</div>
+							<div class="like_film">
+								<div class="rating"></div>
+								<div class="button_like"><button class="like">Нравится</button></div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+
+
+			</div>
+
+		</div>
+
+		<button class="toggle_calc">Посчитать</button>
+		<div class="calc">
+			<div class="table">
+				<div class="result">
+					<div class="pervoe"></div>
+					<div class="znak"></div>
+					<div class="vtoroye"></div>
+				</div>
+				<div class="erase">
+					C
+				</div>
+			</div>
+			<div class="num_wrap">
+				<div class="numbers">
+					<div class="num">1</div>
+					<div class="num">2</div>
+					<div class="num">3</div>
+					<div class="num">4</div>
+					<div class="num">5</div>
+					<div class="num">6</div>
+					<div class="num">7</div>
+					<div class="num">8</div>
+					<div class="num">9</div>
+					<div class="num min">0</div>
+					<div class="sign">,</div>
+					<div class="sign sign_res">=</div>
+				</div>
+				<div class="signs">
+					<div class="sign">+</div>
+					<div class="sign">-</div>
+					<div class="sign">*</div>
+					<div class="sign">/</div>
+
+				</div>
+			</div>
+		</div>
+
+
+		<button class="start">START</button>
+
+
+		<div class="progress-bar-test">
+			<button class="start_1">START</button>
+			<div class="loading_wrap_1">
+				<div class="loading_1">
+					<div class="finish"></div>
+				</div>
+			</div>
+		</div>
+		<div class="slider_container">
+			<div class="arrow_left">L</div>
+			<div class="slider_wrap">
+				<div class="slider">
+					<img src="assets/img/cloud.png" alt="">
+					<img src="assets/img/breakingbad.png" alt="">
+					<img src="assets/img/dead.png" alt="">
+				</div>
+			</div>
+			<div class="arrow_right">P</div>
+		</div>
+
+		<div class="footer">
+			<div class="strelka">
+				<img src="strelka.png" class="str_img">
+			</div>
+			<p>
+				<a href="index.html">Главная</a> |
+				<a href="films.html">Фильмы</a> |
+				<a href="#">Сериалы</a> |
+				<a href="rating.html">Рейтинг фильмов</a> |
+				<a href="contact.html">Контакты</a>
+			</p>
+			<p>wh-db.com 2015</p>
+		</div>
+
+	</div>
+	<div class="loading_wrap">
+		<div class="loading">
+			<div class="finish">Готово</div>
+		</div>
+	</div>
+
+	<script src="assets/js/script.js"></script>
+</body>
+
+</html>
