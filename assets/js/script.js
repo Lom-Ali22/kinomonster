@@ -759,6 +759,11 @@ $(".button_like").on("click", function(){
 
     
 })
+// git config --global user.email "you@example.com"
+// git config --global user.name "Your Name"
+
+
+var test  = 20
 
 var allposts = $(".post")
 var infoPosts = []
