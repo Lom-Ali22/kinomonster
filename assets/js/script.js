@@ -762,7 +762,11 @@ $(".button_like").on("click", function(){
 // git config --global user.email "you@example.com"
 // git config --global user.name "Your Name"
 
-////1231 2312 3123123
+// команды для заливки новых правок в систему гита
+// git add *
+// git commit -m "Суть новой правки"
+// git push
+
 
 var test  = 20
 var test2 = 1
