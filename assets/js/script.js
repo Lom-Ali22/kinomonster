@@ -800,7 +800,7 @@ function test(){
     console.log("hello world");
 }
 
-
+let newCommit = 5 //Изменений
 
 
 
