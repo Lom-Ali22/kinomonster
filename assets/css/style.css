@@ -227,6 +227,7 @@ ul li {
 
 .header {
   background-color: darkslateblue;
+  border: solid 1px black;
   /*! height: 177px; */
   font-size: 0.8em;
   margin-left: 0px;
