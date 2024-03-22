@@ -768,8 +768,7 @@ $(".button_like").on("click", function(){
 // git push
 
 
-var test  = 20
-var test2 = 1
+
 
 var allposts = $(".post")
 var infoPosts = []
