@@ -796,10 +796,13 @@ infoPosts.sort((a, b) => a.likes < b.likes ? 1 : -1);
 
 console.log(infoPosts)
 
+function test(){
+    console.log("hello world");
+}
 
 
 
-// console.log(infoPosts)
+
 
 // var maxLikes = -1
 // var maxLikesPost
