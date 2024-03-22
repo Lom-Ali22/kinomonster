@@ -802,7 +802,10 @@ function test(){
 
 let newCommit = 5 //Изменений
 
-
+function getElemHeight(){
+    let height = $("#elem").height()
+    console.log(height)
+}
 
 // var maxLikes = -1
 // var maxLikesPost
