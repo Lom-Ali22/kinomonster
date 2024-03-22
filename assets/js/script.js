@@ -805,8 +805,8 @@ let newCommit = 5 //Изменений
 function getElemHeight(){
     let height = $("#elem").height()
     let width = $(".menubar").width()
-    console.log(height)
-    console.log(width)
+    console.log("Высота = ", height)
+    console.log("Ширина = ", width)
 }
 
 
