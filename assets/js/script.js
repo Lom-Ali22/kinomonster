@@ -804,8 +804,11 @@ let newCommit = 5 //Изменений
 
 function getElemHeight(){
     let height = $("#elem").height()
+    let width = $(".menubar").width()
     console.log(height)
+    console.log(width)
 }
+
 
 // var maxLikes = -1
 // var maxLikesPost
