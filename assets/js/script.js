@@ -238,7 +238,7 @@ buttonPoisk.addEventListener("mousedown", () => {
 // })
 
 
-let menuState = "открыто"
+
 
 function показатьИндикаторЗагрузкиНенадолго() {
     let loading = document.querySelector(".loading_animation")
@@ -255,46 +255,57 @@ function показатьИндикаторЗагрузкиНенадолго() 
 // получаем иконку меню в переменную menu
 //let menu = document.querySelector(".menu_img")
 
+
+// // вешаем событие . при клике по иконке меню происходит все то что внутри
+// $(".menu_img").on("click", () => {
+//     // если состояние сайдбара == блок
+//     if (menuState == "открыто") {
+
+//         // скрываем сайдбар
+//         показатьИндикаторЗагрузкиНенадолго()
+//         setTimeout(() => {  
+//             // Закрываю меню
+//             $(".sidebar").css("transform", "translatex(222px)")
+//             $(".sidebar").css("opacity", "0")
+//             $(".sidebar").css("visibility", "hidden")  
+//         }, 300)
+//         menuState = "Закрыто"
+
+//     } else {
+
+//         // показываем сайдбар
+//         показатьИндикаторЗагрузкиНенадолго()
+//         setTimeout(() => {
+//             $(".sidebar").css("transform", "translatex(0px)")
+//             $(".sidebar").css("opacity", "1")
+//             $(".sidebar").css("visibility", "visible")           
+//         }, 300)
+//         menuState = "открыто"
+//     }
+// })
+
+let menuState = "открыто"
+
 // вешаем событие . при клике по иконке меню происходит все то что внутри
-document.querySelector(".menu_img").addEventListener("click", () => {
+$(".menu_img").on("click", () => {
     // если состояние сайдбара == блок
     if (menuState == "открыто") {
+
         // скрываем сайдбар
-
         показатьИндикаторЗагрузкиНенадолго()
-        setTimeout(() => {
-
-            //document.querySelector(".sidebar_container").classList.add("sidebar_invisible")
-
-
-            document.querySelector(".sidebar").style.transform = "translatex(222px)"
-
-            // document.querySelectorAll(".sidebar").forEach(sidebar=>{
-            //     sidebar.style.transform = "translatex(222px)"
-            // })
-
-
-            //.css("transform", "translatex(222px)")
-            // document.querySelector(".sidebar:nth-child(2)").style.transform = "translatex(222px)"
-            // document.querySelector(".sidebar:nth-child(3)").style.transform = "translatex(222px)"
-            // document.querySelector(".sidebar:nth-child(4)").style.transform = "translatex(222px)"
-            // document.querySelector(".sidebar:nth-child(5)").style.transform = "translatex(222px)"
+        setTimeout(() => {  
+            // Закрываю меню
+            $(".sidebar").addClass("hidden")
         }, 300)
-
         menuState = "Закрыто"
 
     } else {
+
         // показываем сайдбар
-
         показатьИндикаторЗагрузкиНенадолго()
-
         setTimeout(() => {
-            document.querySelector(".sidebar:nth-child(2)").style.transform = "translatex(0px)"
-            document.querySelector(".sidebar:nth-child(3)").style.transform = "translatex(0px)"
-            document.querySelector(".sidebar:nth-child(4)").style.transform = "translatex(0px)"
-            document.querySelector(".sidebar:nth-child(5)").style.transform = "translatex(0px)"
+            $(".sidebar").removeClass("hidden")        
         }, 300)
-
         menuState = "открыто"
     }
 })

@@ -368,6 +368,15 @@ hr {
   border-radius: 5px;
   background-color: #f9f9f9;
   transition: 0.7s;
+  transform:translatex(0px);
+  opacity:1;
+  visibility:visible; 
+}
+
+.sidebar.hidden{
+  transform:translatex(222px);
+  opacity:0;
+  visibility:hidden; 
 }
 
 .sidebar_news.invisible {
