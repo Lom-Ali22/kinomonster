@@ -82,12 +82,16 @@ for (i = 0; i < price.length; i++) {
 }
 console.log(spisok)
 
-let buttonPoisk = document.querySelector(".logo_text h2")
-buttonPoisk.addEventListener("mousedown", () => {
-    document.querySelector(".site_content.first").style.display = "none"
-    document.querySelector(".site_content.second").style.display = "block"
-})
 
+$(document).ready(() => {
+    // нашли кнопку поиска
+    let buttonPoisk = document.querySelector(".logo_text h2")
+
+    // алерт при клике по секции поиска
+    buttonPoisk.addEventListener("mousedown", () => {
+        alert("Мы кликнули по поиску")    
+    })  
+})
 /* Тренировочная часть с переменными циклами и тп */
 
 
@@ -100,7 +104,7 @@ buttonPoisk.addEventListener("mousedown", () => {
 
 
 
-/* Поведение сайдбара */
+/* Сайдбар */
 
 function показатьИндикаторЗагрузкиНенадолго() {
     let loading = document.querySelector(".loading_animation")
@@ -140,7 +144,7 @@ $(".menu_img").on("click", () => {
     }
 })
 
-/* Поведение сайдбара */
+/* Сайдбар */
 
 
 

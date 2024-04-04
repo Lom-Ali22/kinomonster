@@ -706,3 +706,6 @@ arrow_left.addEventListener("click", () => { //вешаем событие пр�
 // $(".content h1:nth-child(1)").on("click", () => {
 //     openModal()
 // })
+
+// document.querySelector(".site_content.first").style.display = "none"
+    // document.querySelector(".site_content.second").style.display = "block"
