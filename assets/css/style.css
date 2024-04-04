@@ -187,7 +187,7 @@ p {
 
 input[type="text"], input[type="password"], input[type="search"] {
   color: #5d5d5d;
-  width: 60%;
+  width: 100%;
   padding: 8px;
 } 
 
@@ -383,6 +383,19 @@ hr {
 	opacity: 0;
 }
 
+.add_posts {
+  width: 100%;
+  border: solid 1px #6f689c6b;
+  padding: 36px;
+  margin-bottom: 4em;
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+  border-radius: 12px;
+  box-shadow: 1px 1px 6px #0000002e;
+}
+
 .btn {
   padding: 8px;
   background-color: white;
@@ -566,6 +579,24 @@ hr {
 
 .posts .posts_content {
   font-size: 0.8em;
+}
+
+.film_description {
+  margin-bottom: 0;
+  padding: 8px;
+  height: 140px;
+  width: 100% !important;
+}
+.add {
+  padding: 0.7em 1.5em;
+  background-color: #6f689c;
+  border: none;
+  color: white;
+  border-radius: 7px;
+  box-shadow: 1px 1px 8px #e3a5a53b;
+  cursor: pointer;
+  transition: 0.3s;
+  width: fit-content;
 }
 
 img.big_image {
