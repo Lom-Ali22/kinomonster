@@ -1,7 +1,7 @@
 
 
 
-// при загрузке страницы
+// Красивая загрузка страницы 
 $(document).ready(() => {
 
     document.querySelector(".loading").style.width = "100%"
@@ -16,31 +16,34 @@ $(document).ready(() => {
     setTimeout(() => {
         $(".main").css("opacity", 1)
         $(".loading_wrap").css("display", "none")
-    }, 2300)
-
-    // читаем лайки с хранилища
-    let likes = localStorage.getItem("Лайков")
-    likes = likes.split(",")
-    console.log("Прочитали лайки из хранилища", likes)
-
-    // Получили новый пост из хранилища    
-    let newPost = localStorage.getItem("Новый пост")
-    newPost = JSON.parse(newPost)
-
-    // добавляем пост
-    addPost(newPost)
-
-    // записываем лайки из массива в каждый пост
-    $(".rating").each(function (index, item) {
-        $(item).text(likes[index])
-    })
-
-    // читает количество лайков из интерфейса
-    var postsRaiting = []
-    $(".rating").each(function (index, item) {
-        postsRaiting.push(Number(item.innerText))
-    })
+    }, 2300)   
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -387,6 +390,33 @@ function openModal() {
 
 /* Все связанное с постами */
 
+
+// Действия с постами при загрузке страницы
+$(document).ready(()=> {
+    // читаем лайки с хранилища
+    let likes = localStorage.getItem("Лайков")
+    likes = likes.split(",")
+    console.log("Прочитали лайки из хранилища", likes)
+
+    // Получили новый пост из хранилища    
+    let newPost = localStorage.getItem("Новый пост")
+    newPost = JSON.parse(newPost)
+
+    // добавляем пост
+    addPost(newPost)
+
+    // записываем лайки из массива в каждый пост
+    $(".rating").each(function (index, item) {
+        $(item).text(likes[index])
+    })
+
+    // читает количество лайков из интерфейса
+    var postsRaiting = []
+    $(".rating").each(function (index, item) {
+        postsRaiting.push(Number(item.innerText))
+    })
+})
+
 function addPost(post) {
     let newPost = $(`
     <div class="post">                          
@@ -487,24 +517,3 @@ console.log(infoPosts)
 
 
 /* Все связанное с постами */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
