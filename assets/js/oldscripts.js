@@ -700,3 +700,9 @@ arrow_left.addEventListener("click", () => { //вешаем событие пр�
 // console.log(test[4])
 // test[2] = 99999
 // console.log(test)
+
+
+// делаем модальное окно видимым
+// $(".content h1:nth-child(1)").on("click", () => {
+//     openModal()
+// })

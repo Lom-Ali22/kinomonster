@@ -1,3 +1,65 @@
+
+
+
+// при загрузке страницы
+$(document).ready(() => {
+
+    document.querySelector(".loading").style.width = "100%"
+    document.querySelector(".loading_wrap").style.opacity = 1
+
+    // загрузка исчезает
+    setTimeout(() => {
+        document.querySelector(".loading_wrap").style.opacity = 0
+    }, 2000)
+
+    // страница появляется
+    setTimeout(() => {
+        $(".main").css("opacity", 1)
+        $(".loading_wrap").css("display", "none")
+    }, 2300)
+
+    // читаем лайки с хранилища
+    let likes = localStorage.getItem("Лайков")
+    likes = likes.split(",")
+    console.log("Прочитали лайки из хранилища", likes)
+
+    // Получили новый пост из хранилища    
+    let newPost = localStorage.getItem("Новый пост")
+    newPost = JSON.parse(newPost)
+
+    // добавляем пост
+    addPost(newPost)
+
+    // записываем лайки из массива в каждый пост
+    $(".rating").each(function (index, item) {
+        $(item).text(likes[index])
+    })
+
+    // читает количество лайков из интерфейса
+    var postsRaiting = []
+    $(".rating").each(function (index, item) {
+        postsRaiting.push(Number(item.innerText))
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Тренировочная часть с переменными циклами и тп */
+
 var names = ["Сыр", "Молоко", "Кетчуп", "Хлеб", "Миксер"]
 var count = [20, 3, 1, 2, 1]
 var price = [400, 100, 150, 40, 3000]
@@ -23,6 +85,20 @@ buttonPoisk.addEventListener("mousedown", () => {
     document.querySelector(".site_content.second").style.display = "block"
 })
 
+/* Тренировочная часть с переменными циклами и тп */
+
+
+
+
+
+
+
+
+
+
+
+/* Поведение сайдбара */
+
 function показатьИндикаторЗагрузкиНенадолго() {
     let loading = document.querySelector(".loading_animation")
 
@@ -37,7 +113,7 @@ function показатьИндикаторЗагрузкиНенадолго() 
 
 let menuState = "открыто"
 
-// вешаем событие . при клике по иконке меню происходит все то что внутри
+// При клике скрывает/показывает сайдбар
 $(".menu_img").on("click", () => {
     // если состояние сайдбара == блок
     if (menuState == "открыто") {
@@ -61,10 +137,23 @@ $(".menu_img").on("click", () => {
     }
 })
 
+/* Поведение сайдбара */
 
-let film = document.querySelector(".content h1")
-let filmState = "фильмы на месте"
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Калькулятор */
 
 
 // модель системы 
@@ -76,13 +165,11 @@ let etap = 1
 
 // при клике по цифрам
 $(`.num`).on("click", function () {
-
     // получили цифру в которую кликнули
     let buttonNum = $(this).text()
     // если текст в первой ячейке равен == "пустоте"
     // то пишем в первую
-    if (etap == 1) {
-        // $(".result").css("gap", "0.2em")
+    if (etap == 1) {        
         // записали первую цифру в модель
         pervoe = pervoe + buttonNum
         // поменяли текст цифры
@@ -95,7 +182,6 @@ $(`.num`).on("click", function () {
         // поменяли текст второй цифры
         $(".vtoroye").text(vtoroye)
     }
-
 })
 
 // при клике по знакам
@@ -109,6 +195,7 @@ $(`.signs > .sign`).on("click", function () {
     etap = 2
 })
 
+// сброс калькулятора
 $(`.erase`).on("click", function () {
     resetCalc()
 })
@@ -123,6 +210,8 @@ function resetCalc() {
     etap = 1
 }
 
+// Математические вычисления при клике на кнопку равно
+// подсчет результата 
 $(".sign_res").on("click", function () {
 
     let resultat
@@ -168,6 +257,7 @@ function showCalc() {
     $(".calc").css("display", "block")
 }
 
+// Вкл/выкл калькулятора
 $(".toggle_calc").on("click", () => {
     let calcDisplay = $(".calc").css("display")
     if (calcDisplay == "none") {
@@ -177,13 +267,56 @@ $(".toggle_calc").on("click", () => {
     }
 })
 
-// let neo = ".films_block:nth-child(2) > a:nth-child(1) > img"
+/* Калькулятор */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Линия сверху при пролистывании страницы
+$(window).on("scroll", () => {
+    let nowScroll = $("html").scrollTop()
+    let docHeight = $("html").height()
+    let poleZrenia = $(window).height()
+
+    // на сколько мы в принципе можем пкселей прокрутить страницу
+    let maxScroll = docHeight - poleZrenia
+
+    // на сколько процентов мы прокрутили страницу??
+    let percentScroll = nowScroll / maxScroll * 100
+
+    $(".load_wrap").css("width", `${percentScroll}%`)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+/* Увеличивает картинки при клике */
 
 function setAllImagesSmall() {
     $(".films_block img").removeClass("big_image")
 }
 
-
+// Модальное окно с увеличеной картинкой
 $(".films_block img").on("click", function (event) {
     // Убираем все стандартные события
     event.preventDefault()
@@ -205,25 +338,54 @@ $(".films_block img").on("click", function (event) {
     openModal()
 })
 
+/* Увеличивает картинки при клике */
+
+
+
+
+
+
+
+
+
+
+/* Модальное окно */ 
+
 // скрываем модальное окно при нажатии на Х
 $(".x").on("click", () => {
     closeModal()
 })
 
-// делаем модальное окно видимым
-$(".content h1:nth-child(1)").on("click", () => {
-    openModal()
-})
-
+// закрываем модальное окно при клике на серый фон
 $(".modal_window").on("click", (event) => {
     if (event.target == $(".modal_window")[0]) {
         closeModal()
-    } else {
-
-    }
-
-    // console.log(event)
+    } else {}   
 })
+
+function closeModal() {
+    $("body").removeClass("site_overflow_hidden")
+    $(".modal_window").removeClass("visible")
+}
+
+function openModal() {
+    $("body").addClass("site_overflow_hidden")
+    $(".modal_window").addClass("visible")
+}
+
+/* Модальное окно */ 
+
+
+
+
+
+
+
+
+
+
+
+/* Все связанное с постами */
 
 function addPost(post) {
     let newPost = $(`
@@ -247,15 +409,11 @@ function addPost(post) {
     </div> `)
 
     let likeButton = newPost.find(".button_like")
-
     $(likeButton).on("click", function () {
         like(this)
     })
-
     $(".posts").append(newPost)
 }
-
-
 
 function like(likeButt) {
     // сюда будем писать что лайки лайкаються
@@ -274,86 +432,35 @@ function like(likeButt) {
         //записываем одну из цифр в postsRaiting
         postsRaiting.push(Number(item.innerText))
     })
-
     // записываем в хранилище
     localStorage.setItem("Лайков", postsRaiting)
     console.log("Записываем в хранилище", postsRaiting)
 }
 
-function closeModal() {
-    $("body").removeClass("site_overflow_hidden")
-    $(".modal_window").removeClass("visible")
-}
-
-function openModal() {
-    $("body").addClass("site_overflow_hidden")
-    $(".modal_window").addClass("visible")
-}
-
-// при загрузке страницы
-$(document).ready(() => {
-
-    document.querySelector(".loading").style.width = "100%"
-    document.querySelector(".loading_wrap").style.opacity = 1
-
-    // загрузка исчезает
-    setTimeout(() => {
-        document.querySelector(".loading_wrap").style.opacity = 0
-    }, 2000)
-
-    // страница появляется
-    setTimeout(() => {
-        $(".main").css("opacity", 1)
-        $(".loading_wrap").css("display", "none")
-    }, 2300)
-
-    // читаем лайки с хранилища
-    let likes = localStorage.getItem("Лайков")
-    likes = likes.split(",")
-    console.log("Прочитали лайки из хранилища", likes)
-
-    // Получили новый пост из хранилища    
-    let newPost = localStorage.getItem("Новый пост")
-    newPost = JSON.parse(newPost)
-
-    // добавляем пост
-    addPost(newPost)
-
-    // записываем лайки из массива в каждый пост
-    $(".rating").each(function (index, item) {
-        $(item).text(likes[index])
-    })
-
-    // читает количество лайков из интерфейса
-    var postsRaiting = []
-    $(".rating").each(function (index, item) {
-        postsRaiting.push(Number(item.innerText))
-    })
-})
-
-// Линия сверху при пролистывании страницы
-$(window).on("scroll", () => {
-    let nowScroll = $("html").scrollTop()
-    let docHeight = $("html").height()
-    let poleZrenia = $(window).height()
-
-    // на сколько мы в принципе можем пкселей прокрутить страницу
-    let maxScroll = docHeight - poleZrenia
-
-    // на сколько процентов мы прокрутили страницу??
-    let percentScroll = nowScroll / maxScroll * 100
-
-    $(".load_wrap").css("width", `${percentScroll}%`)
-})
-
-
-
-
+// при клике по лайку
 $(".button_like").on("click", function () {
     like(this)
 })
 
+// Добавляем новый пост на сайт
+$(".add").on("click", function () {
+    let title = $(this).prev().prev().val()
+    let textOfPosts = $(this).prev().val()
+    let post = {
+        heading: title,
+        likes: 0,
+        text: textOfPosts,
+    }   
+    let post2 = JSON.stringify(post)
+    localStorage.setItem("Новый пост", post2)
+    addPost(post)
+})
 
+
+
+
+
+// Эксперименты с постами
 var allposts = $(".post")
 var infoPosts = []
 var postsKol = $(".post").length
@@ -376,23 +483,28 @@ for (i = 0; i < postsKol; i++) {
 }
 
 infoPosts.sort((a, b) => a.likes < b.likes ? 1 : -1);
-
 console.log(infoPosts)
 
-// Добавляем новый пост на сайт
-$(".add").on("click", function () {
-    let title = $(this).prev().prev().val()
-    let textOfPosts = $(this).prev().val()
-    let post = {
-        heading: title,
-        likes: 0,
-        text: textOfPosts,
-    }
-    //console.log(post)
-    let post2 = JSON.stringify(post)
-    localStorage.setItem("Новый пост", post2)
 
-    addPost(post)
+/* Все связанное с постами */
 
-})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
